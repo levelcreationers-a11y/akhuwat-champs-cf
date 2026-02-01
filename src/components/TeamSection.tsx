@@ -1,12 +1,15 @@
-import { Crown, Code, User } from "lucide-react";
+import { Crown, Code, User, ExternalLink } from "lucide-react";
+import fazalQadirImg from "@/assets/fazal-qadir.jpeg";
 
 interface TeamMember {
   name: string;
   role: "lead" | "member";
+  image?: string;
+  cfHandle?: string;
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Fazal Qadir", role: "lead" },
+  { name: "Fazal Qadir", role: "lead", image: fazalQadirImg, cfHandle: "fazalqadir" },
   { name: "Abdul Wahab Akbar", role: "member" },
   { name: "Ali Asghar", role: "member" },
   { name: "Bashir Ahmad", role: "member" },
@@ -34,10 +37,16 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       
       <div className="relative z-10">
         {/* Avatar */}
-        <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl flex items-center justify-center ${
-          isLead ? "bg-gradient-primary glow" : "bg-secondary"
+        <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden flex items-center justify-center ${
+          isLead ? "bg-gradient-primary glow ring-2 ring-primary/50" : "bg-secondary"
         }`}>
-          {isLead ? (
+          {member.image ? (
+            <img 
+              src={member.image} 
+              alt={member.name} 
+              className="w-full h-full object-cover"
+            />
+          ) : isLead ? (
             <Crown className="w-10 h-10 text-primary-foreground" />
           ) : (
             <User className="w-10 h-10 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
@@ -52,7 +61,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
         </h3>
 
         {/* Role badge */}
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-2 flex-wrap">
           <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium ${
             isLead 
               ? "bg-primary/20 text-primary border border-primary/30" 
@@ -70,6 +79,19 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
               </>
             )}
           </span>
+          
+          {/* Codeforces link */}
+          {member.cfHandle && (
+            <a 
+              href={`https://codeforces.com/profile/${member.cfHandle}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30 hover:bg-blue-500/30 transition-colors"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              CF Profile
+            </a>
+          )}
         </div>
       </div>
 
