@@ -38,7 +38,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       <div className="relative z-10">
         {/* Avatar */}
         <div className={`w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden flex items-center justify-center ${
-          isLead ? "ring-4 ring-primary/60 glow" : "bg-secondary"
+          isLead ? "ring-[6px] ring-primary glow" : "bg-secondary"
         }`}>
           {member.image ? (
             <img 
