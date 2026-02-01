@@ -37,14 +37,14 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       
       <div className="relative z-10">
         {/* Avatar */}
-        <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden flex items-center justify-center ${
-          isLead ? "bg-gradient-primary glow ring-2 ring-primary/50" : "bg-secondary"
+        <div className={`w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden flex items-center justify-center ${
+          isLead ? "ring-3 ring-primary/60 glow" : "bg-secondary"
         }`}>
           {member.image ? (
             <img 
               src={member.image} 
               alt={member.name} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top scale-110"
             />
           ) : isLead ? (
             <Crown className="w-10 h-10 text-primary-foreground" />
