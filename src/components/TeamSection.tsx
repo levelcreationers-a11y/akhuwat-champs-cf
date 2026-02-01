@@ -1,5 +1,6 @@
 import { Crown, Code, User, ExternalLink } from "lucide-react";
 import fazalQadirImg from "@/assets/fazal-qadir.jpeg";
+import abdulWahabImg from "@/assets/abdul-wahab.jpeg";
 
 interface TeamMember {
   name: string;
@@ -10,7 +11,7 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   { name: "Fazal Qadir", role: "lead", image: fazalQadirImg, cfHandle: "fazalqadir" },
-  { name: "Abdul Wahab Akbar", role: "member" },
+  { name: "Abdul Wahab Akbar", role: "member", image: abdulWahabImg },
   { name: "Ali Asghar", role: "member" },
   { name: "Bashir Ahmad", role: "member" },
   { name: "Munir Ahmad", role: "member" },
