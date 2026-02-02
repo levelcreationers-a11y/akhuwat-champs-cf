@@ -18,8 +18,8 @@ const teamMembers: TeamMember[] = [
   { name: "Ali Asghar", role: "member", title: "ML / AI Engineer", image: aliAsgharImg },
   { name: "Bashir Ahmad", role: "member", title: "AI & Problem Solver" },
   { name: "Munir Ahmad", role: "member", title: "Problem Solver & Coder", image: munirAhmadImg, cfHandle: "MUNEER_AHMAD" },
-  { name: "Muhammad Ahmar", role: "member" },
-  { name: "Abdul Rehman Chandia", role: "member" },
+  { name: "Muhammad Ahmar", role: "member", title: "Programmer & Leetcoder" },
+  { name: "Abdul Rehman Chandia", role: "member", title: "Python & AI" },
 ];
 
 const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }) => {
