@@ -7,13 +7,14 @@ import munirAhmadImg from "@/assets/munir-ahmad.jpeg";
 interface TeamMember {
   name: string;
   role: "lead" | "member";
+  title?: string;
   image?: string;
   cfHandle?: string;
 }
 
 const teamMembers: TeamMember[] = [
   { name: "Fazal Qadir", role: "lead", image: fazalQadirImg, cfHandle: "fazalqadir" },
-  { name: "Abdul Wahab Akbar", role: "member", image: abdulWahabImg, cfHandle: "Dr_Wahabkhan" },
+  { name: "Abdul Wahab Akbar", role: "member", title: "Researcher", image: abdulWahabImg, cfHandle: "Dr_Wahabkhan" },
   { name: "Ali Asghar", role: "member", image: aliAsgharImg },
   { name: "Bashir Ahmad", role: "member" },
   { name: "Munir Ahmad", role: "member", image: munirAhmadImg, cfHandle: "MUNEER_AHMAD" },
@@ -78,7 +79,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
             ) : (
               <>
                 <Code className="w-3.5 h-3.5" />
-                Member
+                {member.title || "Member"}
               </>
             )}
           </span>
