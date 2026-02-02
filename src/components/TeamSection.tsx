@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
   { name: "Fazal Qadir", role: "lead", image: fazalQadirImg, cfHandle: "fazalqadir" },
   { name: "Abdul Wahab Akbar", role: "member", title: "Researcher", image: abdulWahabImg, cfHandle: "Dr_Wahabkhan" },
   { name: "Ali Asghar", role: "member", title: "ML / AI Engineer", image: aliAsgharImg },
-  { name: "Bashir Ahmad", role: "member" },
+  { name: "Bashir Ahmad", role: "member", title: "AI & Problem Solver" },
   { name: "Munir Ahmad", role: "member", title: "Problem Solver & Coder", image: munirAhmadImg, cfHandle: "MUNEER_AHMAD" },
   { name: "Muhammad Ahmar", role: "member" },
   { name: "Abdul Rehman Chandia", role: "member" },
