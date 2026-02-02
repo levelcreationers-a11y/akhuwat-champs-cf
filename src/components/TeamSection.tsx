@@ -13,7 +13,7 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   { name: "Fazal Qadir", role: "lead", image: fazalQadirImg, cfHandle: "fazalqadir" },
-  { name: "Abdul Wahab Akbar", role: "member", image: abdulWahabImg },
+  { name: "Abdul Wahab Akbar", role: "member", image: abdulWahabImg, cfHandle: "Dr_Wahabkhan" },
   { name: "Ali Asghar", role: "member", image: aliAsgharImg },
   { name: "Bashir Ahmad", role: "member" },
   { name: "Munir Ahmad", role: "member", image: munirAhmadImg, cfHandle: "MUNEER_AHMAD" },
