@@ -3,6 +3,7 @@ import fazalQadirImg from "@/assets/fazal-qadir.jpeg";
 import abdulWahabImg from "@/assets/abdul-wahab.jpeg";
 import aliAsgharImg from "@/assets/ali-asghar.jpeg";
 import munirAhmadImg from "@/assets/munir-ahmad.jpeg";
+import mohsinLatifImg from "@/assets/mohsin-latif.jpeg";
 
 interface TeamMember {
   name: string;
@@ -10,6 +11,7 @@ interface TeamMember {
   title?: string;
   image?: string;
   cfHandle?: string;
+  portfolioUrl?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -20,6 +22,7 @@ const teamMembers: TeamMember[] = [
   { name: "Munir Ahmad", role: "member", title: "Problem Solver & Coder", image: munirAhmadImg, cfHandle: "MUNEER_AHMAD" },
   { name: "Muhammad Ahmar", role: "member", title: "Programmer & Leetcoder" },
   { name: "Abdul Rehman Chandia", role: "member", title: "Python & AI" },
+  { name: "Mohsin Latif", role: "member", title: "Project Director", image: mohsinLatifImg, cfHandle: "MohsinLatif17", portfolioUrl: "https://persportal-2bv5se4c.manus.space/" },
 ];
 
 const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }) => {
@@ -94,6 +97,17 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
             >
               <ExternalLink className="w-3.5 h-3.5" />
               CF Profile
+            </a>
+          )}
+          {member.portfolioUrl && (
+            <a 
+              href={member.portfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Portfolio
             </a>
           )}
         </div>
