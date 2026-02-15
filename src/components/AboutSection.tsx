@@ -1,4 +1,4 @@
-import { Target, Zap, BookOpen, Award } from "lucide-react";
+import { Target, Zap, BookOpen, Award, Heart } from "lucide-react";
 
 const features = [
   {
@@ -20,6 +20,12 @@ const features = [
     icon: Award,
     title: "Team Excellence",
     description: "Supporting each other to achieve higher ratings",
+  },
+  {
+    icon: Heart,
+    title: "Akhuwat Vision",
+    description: "Empowering communities through education and brotherhood",
+    href: "https://akhuwat.org.pk/about",
   },
 ];
 
@@ -68,19 +74,40 @@ const AboutSection = () => {
 
           {/* Right - Features grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div 
-                key={feature.title}
-                className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-gradient-primary transition-all duration-300">
-                  <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+            {features.map((feature, index) => {
+              const content = (
+                <>
+                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-gradient-primary transition-all duration-300">
+                    <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </>
+              );
+
+              const className = "group p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-300 hover:scale-105";
+
+              return feature.href ? (
+                <a
+                  key={feature.title}
+                  href={feature.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div
+                  key={feature.title}
+                  className={className}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {content}
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
