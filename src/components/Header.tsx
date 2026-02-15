@@ -1,6 +1,7 @@
 import { Calendar, Users, Mail, Trophy, ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import logoImg from "@/assets/logo.jpg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +31,8 @@ const Header = () => {
       <div className="container px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="text-xl font-bold text-gradient">
+          <a href="/" className="flex items-center gap-2 text-xl font-bold text-gradient">
+            <img src={logoImg} alt="Akhuwat Champs" className="w-9 h-9 rounded-full object-cover" />
             Akhuwat Champs
           </a>
 
