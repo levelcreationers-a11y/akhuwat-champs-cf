@@ -7,16 +7,20 @@ const Header = () => {
 
   const navItems = [
     { label: "Contest Coming", href: "#contest", icon: Calendar },
-    { label: "Join Us", href: "#join", icon: Users },
+    { label: "Join Us", href: "https://codeforces.com/group/FRcJYtMPKa", icon: Users, external: true },
     { label: "Contact Us", href: "#contact", icon: Mail },
     { label: "Team", href: "#team", icon: Trophy },
     { label: "Gadgets", href: "#gadgets", icon: ShoppingBag },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (item.external) {
+      window.open(item.href, "_blank", "noopener,noreferrer");
+    } else {
+      const element = document.querySelector(item.href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setMobileMenuOpen(false);
   };
@@ -35,7 +39,7 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavClick(item)}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
               >
                 <item.icon className="w-4 h-4" />
@@ -62,7 +66,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavClick(item)}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
                 >
                   <item.icon className="w-4 h-4" />
