@@ -1,14 +1,17 @@
-import { Calendar, Users, Mail, Trophy, ShoppingBag, Menu, X } from "lucide-react";
+import { Calendar, Users, Mail, Trophy, ShoppingBag, Menu, X, GraduationCap } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import logoImg from "@/assets/logo.jpg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { label: "Contest Coming", href: "https://codeforces.com/group/FRcJYtMPKa/contests", icon: Calendar, external: true },
     { label: "Join Us", href: "https://codeforces.com/group/FRcJYtMPKa", icon: Users, external: true },
+    { label: "Learn CP", href: "/learn-cp", icon: GraduationCap },
     { label: "Contact Us", href: "mailto:25f.bsit.07@gmail.com", icon: Mail, external: true },
     { label: "Team", href: "#team", icon: Trophy },
     { label: "Gadgets", href: "#gadgets", icon: ShoppingBag },
@@ -17,11 +20,13 @@ const Header = () => {
   const handleNavClick = (item: typeof navItems[0]) => {
     if (item.external) {
       window.open(item.href, "_blank", "noopener,noreferrer");
-    } else {
+    } else if (item.href.startsWith("#")) {
       const element = document.querySelector(item.href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      navigate(item.href);
     }
     setMobileMenuOpen(false);
   };
