@@ -6,9 +6,9 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Contest Coming", href: "#contest", icon: Calendar },
+    { label: "Contest Coming", href: "https://codeforces.com/group/FRcJYtMPKa/contests", icon: Calendar, external: true },
     { label: "Join Us", href: "https://codeforces.com/group/FRcJYtMPKa", icon: Users, external: true },
-    { label: "Contact Us", href: "#contact", icon: Mail },
+    { label: "Contact Us", href: "mailto:25f.bsit.07@gmail.com", icon: Mail, external: true },
     { label: "Team", href: "#team", icon: Trophy },
     { label: "Gadgets", href: "#gadgets", icon: ShoppingBag },
   ];
